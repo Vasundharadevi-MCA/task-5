@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Details</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150vh;
+            margin: 2px;
+            background: url("https://cdn.prod.website-files.com/5a9ee6416e90d20001b20038/64c0b1ca17a24e60d144141e_-7.jpg"), #010614;
+            background-size: cover;
+        }
+
+        h1 {
+            color: rgb(248, 8, 8);
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+
+        fieldset {
+            border: bold;
+            margin-bottom: 10px;
+        }
+
+        form {
+            width: 700px;
+            background-color: transparent;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(237, 9, 9, 0.91);
+        }
+
+        input[type=text],
+        input[type=date],
+        textarea,
+        input[type=email],
+        input[type=number],
+        input[type=password] {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid rgb(254, 14, 54);
+            border-radius: 4px;
+            background-color: transparent;
+            color: rgb(16, 1, 1);
+        }
+
+        button {
+            color: rgb(252, 248, 248);
+            cursor: pointer;
+            background-color: green;
+            padding: 3px;
+            font-size: medium;
+            margin-left: 170px;
+            width: 50%;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        @media (max-width: 1200px) {
+            form {
+                width: 85%;
+                padding: 20px;
+            }
+
+            button {
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 715px) {
+            form {
+                width: 90%;
+                padding: 15px;
+            }
+
+            button {
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            form {
+                width: 95%;
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 18px;
+            }
+
+            button {
+                margin-left: 0;
+                width: 100%;
+                font-size: small;
+                padding: 10px;
+            }
+        }
+    </style>
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const firstName = document.forms["personalDetails"]["firstName"].value;
+            const lastName = document.forms["personalDetails"]["lastName"].value;
+            const email = document.forms["personalDetails"]["email"].value;
+            const password = document.forms["personalDetails"]["password"].value;
+            const phone = document.forms["personalDetails"]["phone"].value;
+            const dob = document.forms["personalDetails"]["dob"].value;
+            const address = document.forms["personalDetails"]["address"].value;
+            if (!firstName || !lastName || !email || !password || !phone || !dob || !address) {
+                alert("All fields are required!");
+                return;
+            }
+            return Registration successfull
+            }
+    </script>
+</head>
+
+<body>
+    <form name="personalDetails" onsubmit="validateForm(event)">
+        <fieldset>
+            <h1><b><u>PERSONAL DETAILS</u></b></h1>
+            <label><b>Enter First Name:</b></label>
+            <input type="text" name="firstName" required>
+            <br><br>
+            <label><b>Enter Last Name:</b></label>
+            <input type="text" name="lastName" required>
+            <br><br>
+            <label><b>Enter Email Id:</b></label>
+            <input type="email" name="email" required>
+            <br><br>
+            <label><b>Enter password:</b></label>
+            <input type="password" name="password" required>
+            <br><br>
+            <label><b>Phone Number:</b></label>
+            <input type="number" name="phone" required>
+            <br><br>
+            <label><b>Date Of Birth:</b></label>
+            <input type="date" name="dob" required>
+            <br><br>
+            <label><b>Gender:</b></label>
+            <input type="radio" name="gender" value="male" required>male
+            <input type="radio" name="gender" value="female" required>female
+            <input type="radio" name="gender" value="other" required>other
+            <br><br>
+            <label><b>Enter Your Address:</b></label>
+            <textarea name="address" rows="5" required></textarea>
+            <br><br>
+            <label><b>Hobbies:</b></label>
+            <input type="checkbox" name="hobbies" value="drawing">drawing
+            <input type="checkbox" name="hobbies" value="reading">reading
+            <input type="checkbox" name="hobbies" value="editing">editing
+            <br><br>
+            <button type="submit">Register</button>
+            <button type="reset" style="background-color: red;">Reset</button>
+            <p>Already have an Account?
+                <a href="index.html">Login</a>
+            </p>
+        </fieldset>
+    </form>
+</body>
+</html>
